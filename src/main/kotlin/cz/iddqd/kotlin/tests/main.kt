@@ -1,12 +1,14 @@
 package cz.iddqd.kotlin.tests
 
 import cz.iddqd.kotlin.tests.units.ReactiveStreams
+import cz.iddqd.kotlin.tests.units.ReactiveStreamsParallel
 
 fun main() {
 	println("Starting...")
 
-	val tests = listOf<UnitTest>(
-		ReactiveStreams()
+	val tests = listOf(
+//		ReactiveStreams(),
+		ReactiveStreamsParallel()
 	)
 
 	tests.forEach {
