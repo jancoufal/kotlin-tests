@@ -10,11 +10,13 @@ class ReactiveStreams : UnitTest {
 	override fun go() {
 		val publisher = SubmissionPublisher<Int>()
 
-		publisher.subscribe(Reader("Inky", -1))
-		publisher.subscribe(Reader("Blinky", 0))
-		publisher.subscribe(Reader("Pinky", 1))
-		publisher.subscribe(Reader("Clyde", 2))
-		publisher.subscribe(Reader("PacMan", Long.MAX_VALUE))
+		with(publisher) {
+			subscribe(Reader("Inky", -1))
+			subscribe(Reader("Blinky", 0))
+			subscribe(Reader("Pinky", 1))
+			subscribe(Reader("Clyde", 2))
+			subscribe(Reader("PacMan", Long.MAX_VALUE))
+		}
 
 		for(i in 0..5) {
 			println("Publishing $i")
