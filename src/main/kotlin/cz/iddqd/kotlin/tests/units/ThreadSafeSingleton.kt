@@ -18,6 +18,25 @@ object SingletonObject {
 	fun getCounter() = counter
 }
 
+// see https://medium.com/swlh/singleton-design-pattern-with-kotlin-2e6c8d42fc11
+class SingletonWithLazyAndObject private constructor() {
+
+	private var counter: AtomicInteger
+	init {
+		println("!! Initializing ${this.javaClass.simpleName}")
+		counter = AtomicInteger(0)
+	}
+
+	fun getCounter() = counter
+
+	private object Holder {
+		val INSTANCE = SingletonWithLazyAndObject()
+	}
+	companion object {
+		val instance: SingletonWithLazyAndObject by lazy { Holder.INSTANCE }
+	}
+}
+
 class ThreadSafeSingleton : UnitTest {
 	override fun go() {
 
@@ -37,13 +56,15 @@ class ThreadSafeSingleton : UnitTest {
 		println("Waiting for ${increaseList.count()} threads...")
 		increaseList.forEach { it.join() }
 
-		println("Counter value: ${SingletonObject.getCounter().get()}")
+		println("Counter value (SingletonObject): ${SingletonObject.getCounter().get()}")
+		println("Counter value (SingletonWithLazyAndObject): ${SingletonWithLazyAndObject.instance.getCounter().get()}")
 	}
 
 	class CounterIncrease(private val startSignal: CountDownLatch) : Thread() {
 		override fun run() {
 			startSignal.await()
 			SingletonObject.getCounter().getAndIncrement()
+			SingletonWithLazyAndObject.instance.getCounter().getAndIncrement()
 		}
 	}
 }
