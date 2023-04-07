@@ -1,14 +1,14 @@
 package cz.iddqd.kotlin.tests
 
-import cz.iddqd.kotlin.tests.units.ReactiveStreams
-import cz.iddqd.kotlin.tests.units.ReactiveStreamsParallel
+import cz.iddqd.kotlin.tests.units.*
 
 fun main() {
 	println("Starting...")
 
 	val tests = listOf(
 //		ReactiveStreams(),
-		ReactiveStreamsParallel()
+//		ReactiveStreamsParallel(),
+		ThreadSafeSingleton()
 	)
 
 	tests.forEach {
