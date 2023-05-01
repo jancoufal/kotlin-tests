@@ -10,6 +10,7 @@ fun main() {
 //		ReactiveStreamsParallel(),
 //		ThreadSafeSingleton(),
 		CoRoutine1(),
+		CoRoutine2(),
 	)
 
 	tests.forEach {

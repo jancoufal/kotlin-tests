@@ -5,6 +5,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+// see https://www.youtube.com/watch?v=kvfpuzSwVZ8
 class CoRoutine1 : UnitTest {
 	override fun go() {
 
@@ -14,6 +15,6 @@ class CoRoutine1 : UnitTest {
 			println("CoRoutine1 coroutine in GlobalScope from thread '${Thread.currentThread().name}'")
 		}
 
-		println("CoRoutine1 go() finished")
+		println("CoRoutine1::go() finished")
 	}
 }
