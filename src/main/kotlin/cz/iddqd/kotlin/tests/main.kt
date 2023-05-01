@@ -15,7 +15,9 @@ fun main() {
 //		CoRoutine4(),
 //		CoRoutine5a(),
 //		CoRoutine5b(),
-		CoRoutine5c(),
+//		CoRoutine5c(),
+//		CoRoutine6a(),
+		CoRoutine6b(),
 	)
 
 	tests.forEach {
