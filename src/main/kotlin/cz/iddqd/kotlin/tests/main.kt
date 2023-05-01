@@ -12,7 +12,10 @@ fun main() {
 //		CoRoutine1(),
 //		CoRoutine2(),
 //		CoRoutine3(),
-		CoRoutine4(),
+//		CoRoutine4(),
+//		CoRoutine5a(),
+//		CoRoutine5b(),
+		CoRoutine5c(),
 	)
 
 	tests.forEach {

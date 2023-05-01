@@ -3,6 +3,7 @@ package cz.iddqd.kotlin.tests.units
 import cz.iddqd.kotlin.tests.UnitTest
 import kotlinx.coroutines.*
 
+// see https://www.youtube.com/watch?v=k9yisEEPC8g
 class CoRoutine4 : UnitTest {
 	override fun go() {
 		println("CoRoutine4 before runBlocking in '${Thread.currentThread().name}' thread")
