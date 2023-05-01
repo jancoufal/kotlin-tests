@@ -11,6 +11,7 @@ fun main() {
 //		ThreadSafeSingleton(),
 		CoRoutine1(),
 		CoRoutine2(),
+		CoRoutine3(),
 	)
 
 	tests.forEach {
