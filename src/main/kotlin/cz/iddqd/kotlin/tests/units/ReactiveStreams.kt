@@ -18,9 +18,9 @@ class ReactiveStreams : UnitTest {
 			subscribe(Reader("PacMan", Long.MAX_VALUE))
 		}
 
-		for(i in 0..5) {
-			println("Publishing $i")
-			publisher.submit(i)
+		repeat(5) {
+			println("Publishing $it")
+			publisher.submit(it)
 		}
 
 		publisher.close()

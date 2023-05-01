@@ -6,8 +6,8 @@ fun main() {
 	println("Starting...")
 
 	val tests = listOf(
-//		ReactiveStreams(),
-//		ReactiveStreamsParallel(),
+		ReactiveStreams(),
+		ReactiveStreamsParallel(),
 		ThreadSafeSingleton()
 	)
 
